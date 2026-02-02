@@ -22,7 +22,7 @@
 - [ ] Implement `trace_stdlib` option
 - [ ] Add example_constants.rb demo from vision doc
 - [ ] Add call stack depth to trace entries
-- [ ] Create trace viewer/formatter (pretty print JSONL)
+- [x] Create trace viewer/formatter (pretty print JSONL)
 - [ ] Add filtering options (exclude certain methods/classes)
 - [ ] Support tracing Rails applications
 - [ ] Add benchmarks for tracer overhead

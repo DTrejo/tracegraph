@@ -1,0 +1,91 @@
+#!/usr/bin/env ruby
+# bin/trace-view - Pretty print trace files
+# Usage: bin/trace-view <trace_file> [--summary]
+
+require 'json'
+
+if ARGV.empty?
+  puts "Usage: bin/trace-view <trace_file> [--summary]"
+  exit 1
+end
+
+trace_file = ARGV[0]
+show_summary = ARGV.include?('--summary')
+
+unless File.exist?(trace_file)
+  puts "Error: File not found: #{trace_file}"
+  exit 1
+end
+
+# ANSI colors
+RESET = "\e[0m"
+BOLD = "\e[1m"
+DIM = "\e[2m"
+GREEN = "\e[32m"
+YELLOW = "\e[33m"
+BLUE = "\e[34m"
+MAGENTA = "\e[35m"
+CYAN = "\e[36m"
+
+call_depth = 0
+
+File.foreach(trace_file) do |line|
+  e = JSON.parse(line)
+
+  if e["event"] == "trace_summary"
+    next if !show_summary
+    puts "\n#{BOLD}=== Trace Summary ===#{RESET}"
+    puts "Total steps: #{e["total_steps"]}"
+    puts "App files: #{e["app_files"].join(", ")}"
+    puts "Methods called: #{e["methods_called"].join(", ")}"
+    next
+  end
+
+  # Track call depth for indentation
+  call_depth -= 1 if e["event"] == "return" || e["event"] == "c_return"
+  call_depth = 0 if call_depth < 0
+  indent = "  " * call_depth
+
+  # Format event type with color
+  event_color = case e["event"]
+    when "call" then GREEN
+    when "return" then MAGENTA
+    when "line" then BLUE
+    else DIM
+  end
+
+  # Build output line
+  id = e["id"].to_s.rjust(3)
+  event = "#{event_color}#{e["event"].ljust(8)}#{RESET}"
+  location = "#{DIM}#{e["file"]}:#{e["line"]}#{RESET}"
+  method = e["method"] != "<main>" ? "#{CYAN}#{e["method"]}#{RESET}" : ""
+
+  puts "#{id} #{indent}#{event} #{location} #{method}"
+
+  # Show source line for line events
+  if e["event"] == "line" && e["source"]
+    puts "    #{indent}#{DIM}> #{e["source"].strip}#{RESET}"
+  end
+
+  # Show locals if present
+  if e["locals"]&.any?
+    vars = e["locals"].map { |k, v| "#{k}=#{v["value"]}" }.join(", ")
+    puts "    #{indent}#{YELLOW}locals: #{vars}#{RESET}"
+  end
+
+  # Show instance variables if present and changed
+  if e["instance_variables"]&.any?
+    changed = e["instance_variables"].select { |k, v| v["changed"] || v["created"] }
+    if changed.any?
+      vars = changed.map { |k, v| "#{k}=#{v["value"]}#{v["changed"] ? " (changed)" : " (new)"}" }.join(", ")
+      puts "    #{indent}#{MAGENTA}ivars: #{vars}#{RESET}"
+    end
+  end
+
+  # Show return value
+  if e["return_value"] && e["app_code"]
+    puts "    #{indent}#{GREEN}=> #{e["return_value"]["value"]}#{RESET}"
+  end
+
+  call_depth += 1 if e["event"] == "call" || e["event"] == "c_call"
+end
