@@ -14,6 +14,8 @@
 ## In Progress
 
 ## Todo
+- [ ] Support recording separate trace file per test block
+- [ ] Add happy-path assertion for each completed feature
 - [ ] Add constant tracking with `capture_constants` method
 - [ ] Detect constant redefinition with warning flag
 - [ ] Implement `trace_gems` option
