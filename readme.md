@@ -7,7 +7,7 @@ Think VCR recordings but for program execution. VCR recordings allow us to recor
 [Code reviews are sad](https://dtrejo.com/code-reviews-sad). Both humans and AI need to do a WAY better job of giving code reviews. The key to that is to fuse code, execution, and data into one unified timeline. This greatly reduces cognitive overhead.
 
 ## Top use-cases
-- Human code reviewers previewing program execution without needing to simulate it in their heads
+- Human code reviewers previewing program execution without needing to simulate it in their heads (think one trace per test entrypoint)
 - AI reading traces and noticing bugs
 - AI reading traces from vibe coded spaghetti messes, then writing simplified versions of that have the same features without the complexity.
 
