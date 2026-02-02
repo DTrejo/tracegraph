@@ -17,15 +17,19 @@ unless File.exist?(trace_file)
   exit 1
 end
 
-# ANSI colors
-RESET = "\e[0m"
-BOLD = "\e[1m"
-DIM = "\e[2m"
-GREEN = "\e[32m"
-YELLOW = "\e[33m"
-BLUE = "\e[34m"
-MAGENTA = "\e[35m"
-CYAN = "\e[36m"
+# ANSI colors (disabled when piped)
+if $stdout.tty?
+  RESET = "\e[0m"
+  BOLD = "\e[1m"
+  DIM = "\e[2m"
+  GREEN = "\e[32m"
+  YELLOW = "\e[33m"
+  BLUE = "\e[34m"
+  MAGENTA = "\e[35m"
+  CYAN = "\e[36m"
+else
+  RESET = BOLD = DIM = GREEN = YELLOW = BLUE = MAGENTA = CYAN = ""
+end
 
 call_depth = 0
 

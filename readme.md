@@ -13,3 +13,9 @@ Think VCR recordings but for program execution. VCR recordings allow us to recor
 
 ## Related Tools
 - https://play.kolo.app/
+
+## Demo
+
+- [Example Ruby file](examples/hello_world.rb)
+- [Raw trace output (JSONL)](examples/hello_world.rb.trace)
+- [Pretty-printed trace](examples/hello_world.rb.viewer.md)
