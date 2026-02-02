@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+# bin/trace - CLI for tracing Ruby files
+
+require_relative '../lib/tracer'
+
+if ARGV.empty?
+  puts "Usage: bin/trace <ruby_file> [output_file]"
+  puts "Example: bin/trace examples/hello_world.rb"
+  exit 1
+end
+
+ruby_file = ARGV[0]
+output_file = ARGV[1]
+
+unless File.exist?(ruby_file)
+  puts "Error: File not found: #{ruby_file}"
+  exit 1
+end
+
+trace_file(ruby_file, output_file)
