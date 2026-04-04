@@ -35,7 +35,8 @@ test('trace-node writes JSONL trace with summary and async events', async () => 
 
     assert.ok(lines.length > 1, 'trace file should contain multiple events')
     assert.equal(lines[lines.length - 1].event, 'trace_summary', 'last event should be summary')
-    assert.ok(lines.some((entry) => entry.event === 'line' || entry.event === 'call'), 'should include code execution events')
+    const executionEvents = lines.filter((entry) => entry.app_code && (entry.event === 'line' || entry.event === 'call' || entry.event === 'return'))
+    assert.ok(executionEvents.length >= 5, 'should include multiple app execution events')
     assert.ok(lines.some((entry) => entry.event === 'async_init'), 'should include async init events')
   } finally {
     if (fs.existsSync(outputFile)) {
