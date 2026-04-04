@@ -26,3 +26,7 @@
 - [ ] Add filtering options (exclude certain methods/classes)
 - [ ] Support tracing Rails applications
 - [ ] Add benchmarks for tracer overhead
+- [ ] Research multi-language debugger integrations (VS Code/DAP, Delve, debugpy, Java JDWP) and define a unified cross-language trace adapter model
+- [ ] Add Node tracer `balanced` mode (call/return + selective line stepping in app files only)
+- [ ] Add Node tracer `fast` mode (function-level tracing + async causality, no per-line stepping)
+- [ ] Add Node tracer sampling mode (interval-based stack capture for low overhead)
