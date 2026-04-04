@@ -1,0 +1,565 @@
+  1 call     hello_world.js:3 Greeter
+    locals: name="World"
+  2   async_init : 
+  3   async_init : 
+  4   async_init : 
+  5   async_init : 
+  6   async_promise_resolve : 
+  7   async_init : 
+  8   async_init : 
+  9   async_init : 
+ 10   async_init : 
+ 11   async_promise_resolve : 
+ 12   async_after : 
+ 13   async_before : 
+ 14   async_promise_resolve : 
+ 15   async_promise_resolve : 
+ 16   async_after : 
+ 17   async_before : 
+ 18   async_promise_resolve : 
+ 19   async_promise_resolve : 
+ 20   async_after : 
+ 21   async_before : 
+ 22   async_init : 
+ 23   async_init : 
+ 24   async_init : 
+ 25   async_promise_resolve : 
+ 26   async_init : 
+ 27   async_init : 
+ 28   async_init : 
+ 29   async_promise_resolve : 
+ 30   async_after : 
+ 31   async_before : 
+ 32   async_promise_resolve : 
+ 33   async_promise_resolve : 
+ 34   async_after : 
+ 35   async_before : 
+ 36   async_promise_resolve : 
+ 37   async_promise_resolve : 
+ 38   async_after : 
+ 39   async_before : 
+ 40   async_promise_resolve : 
+ 41   async_promise_resolve : 
+ 42   async_after : 
+ 43   async_before : 
+ 44   async_init : 
+ 45   async_init : 
+ 46   async_promise_resolve : 
+ 47   async_init : 
+ 48   async_init : 
+ 49   async_promise_resolve : 
+ 50   async_after : 
+ 51   async_before : 
+ 52   async_promise_resolve : 
+ 53   async_promise_resolve : 
+ 54   async_after : 
+ 55   async_before : 
+ 56   async_promise_resolve : 
+ 57   async_promise_resolve : 
+ 58   async_after : 
+ 59   async_before : 
+ 60   async_promise_resolve : 
+ 61   async_promise_resolve : 
+ 62   async_after : 
+ 63   async_before : 
+ 64   async_promise_resolve : 
+ 65   async_after : 
+ 66   async_before : 
+ 67   async_after : 
+ 68   async_before : 
+ 69   async_promise_resolve : 
+ 70   async_after : 
+ 71   async_before : 
+ 72   async_init : 
+ 73   async_promise_resolve : 
+ 74   async_promise_resolve : 
+ 75   async_after : 
+ 76   async_before : 
+ 77   async_after : 
+ 78   async_destroy : 
+ 79   async_destroy : 
+ 80   async_destroy : 
+ 81   async_destroy : 
+ 82   async_destroy : 
+ 83   async_destroy : 
+ 84   async_destroy : 
+ 85   async_destroy : 
+ 86   async_destroy : 
+ 87   async_destroy : 
+ 88   async_destroy : 
+ 89   async_destroy : 
+ 90   async_destroy : 
+ 91   async_destroy : 
+ 92   async_destroy : 
+ 93   async_destroy : 
+ 94   async_destroy : 
+ 95   async_destroy : 
+ 96   async_destroy : 
+ 97   async_destroy : 
+ 98   async_destroy : 
+ 99   async_destroy : 
+100   async_destroy : 
+101   async_destroy : 
+102   async_destroy : 
+103   async_destroy : 
+104   async_destroy : 
+105   async_destroy : 
+106   async_destroy : 
+107   async_destroy : 
+108   async_destroy : 
+109   async_destroy : 
+110   async_destroy : 
+111   async_destroy : 
+112   async_destroy : 
+113   async_destroy : 
+114   async_destroy : 
+115   async_destroy : 
+116   async_destroy : 
+117   async_destroy : 
+118   async_destroy : 
+119   async_destroy : 
+120   async_destroy : 
+121   async_destroy : 
+122   async_destroy : 
+123   async_destroy : 
+124   async_destroy : 
+125   async_destroy : 
+126   async_destroy : 
+127   async_destroy : 
+128   async_destroy : 
+129   async_destroy : 
+130   async_destroy : 
+131   async_destroy : 
+132   async_destroy : 
+133   async_destroy : 
+134   async_destroy : 
+135   async_destroy : 
+136   async_destroy : 
+137   async_destroy : 
+138   async_destroy : 
+139   async_destroy : 
+140   async_destroy : 
+141   async_destroy : 
+142   async_destroy : 
+143   async_destroy : 
+144   async_destroy : 
+145   async_destroy : 
+146   async_destroy : 
+147   async_destroy : 
+148   async_destroy : 
+149   async_destroy : 
+150   async_destroy : 
+151   async_destroy : 
+152   async_destroy : 
+153   async_destroy : 
+154   async_destroy : 
+155   async_destroy : 
+156   async_destroy : 
+157   async_destroy : 
+158   async_destroy : 
+159   async_destroy : 
+160   async_destroy : 
+161   async_destroy : 
+162   async_destroy : 
+163   async_destroy : 
+164   async_destroy : 
+165   async_destroy : 
+166   async_destroy : 
+167   async_destroy : 
+168   async_destroy : 
+169   async_destroy : 
+170   async_destroy : 
+171   async_destroy : 
+172   async_destroy : 
+173   async_destroy : 
+174   async_destroy : 
+175   async_destroy : 
+176   async_destroy : 
+177   async_destroy : 
+178   async_destroy : 
+179   async_destroy : 
+180   async_destroy : 
+181   async_destroy : 
+182   async_destroy : 
+183   async_destroy : 
+184   async_destroy : 
+185   async_destroy : 
+186   async_destroy : 
+187   async_destroy : 
+188   async_destroy : 
+189   async_destroy : 
+190   async_destroy : 
+191   async_destroy : 
+192   async_destroy : 
+193   async_destroy : 
+194   async_destroy : 
+195   async_destroy : 
+196   async_destroy : 
+197   async_destroy : 
+198   async_destroy : 
+199   async_destroy : 
+200   async_destroy : 
+201   async_destroy : 
+202   async_destroy : 
+203   async_destroy : 
+204   async_destroy : 
+205   async_destroy : 
+206   async_destroy : 
+207   async_destroy : 
+208   async_destroy : 
+209   async_destroy : 
+210   async_destroy : 
+211   async_destroy : 
+212   async_destroy : 
+213   async_destroy : 
+214   async_destroy : 
+215   async_destroy : 
+216   async_destroy : 
+217   async_destroy : 
+218   async_destroy : 
+219   async_destroy : 
+220   async_destroy : 
+221   async_destroy : 
+222   async_destroy : 
+223   async_destroy : 
+224   async_destroy : 
+225   async_destroy : 
+226   async_destroy : 
+227   async_destroy : 
+228   async_destroy : 
+229   async_destroy : 
+230   async_destroy : 
+231   async_destroy : 
+232   async_destroy : 
+233   async_destroy : 
+234   async_destroy : 
+235   async_destroy : 
+236   async_destroy : 
+237   async_destroy : 
+238   async_destroy : 
+239   async_destroy : 
+240   async_destroy : 
+241   async_destroy : 
+242   async_destroy : 
+243   async_destroy : 
+244   async_destroy : 
+245   async_destroy : 
+246   async_destroy : 
+247   async_destroy : 
+248   async_destroy : 
+249   async_destroy : 
+250   async_destroy : 
+251   async_destroy : 
+252   async_destroy : 
+253   async_destroy : 
+254   async_destroy : 
+255   async_destroy : 
+256   async_destroy : 
+257   async_destroy : 
+258   async_destroy : 
+259   async_destroy : 
+260   async_destroy : 
+261   async_destroy : 
+262   async_destroy : 
+263   async_destroy : 
+264   async_destroy : 
+265   async_destroy : 
+266   async_destroy : 
+267   async_destroy : 
+268   async_destroy : 
+269   async_destroy : 
+270   async_destroy : 
+271   async_destroy : 
+272   async_destroy : 
+273   async_destroy : 
+274   async_destroy : 
+275   async_destroy : 
+276   async_destroy : 
+277   async_destroy : 
+278   async_destroy : 
+279   async_destroy : 
+280   async_destroy : 
+281   async_destroy : 
+282   async_destroy : 
+283   async_destroy : 
+284   async_destroy : 
+285   async_destroy : 
+286   async_destroy : 
+287   async_destroy : 
+288   async_destroy : 
+289   async_destroy : 
+290   async_destroy : 
+291   async_destroy : 
+292   async_destroy : 
+293   async_destroy : 
+294   async_destroy : 
+295   async_destroy : 
+296   async_destroy : 
+297   async_destroy : 
+298   async_destroy : 
+299   async_destroy : 
+300   async_destroy : 
+301   async_destroy : 
+302   async_destroy : 
+303   async_destroy : 
+304   async_destroy : 
+305   async_destroy : 
+306   async_destroy : 
+307   async_destroy : 
+308   async_destroy : 
+309   async_destroy : 
+310   async_destroy : 
+311   async_destroy : 
+312   async_destroy : 
+313   async_destroy : 
+314   async_destroy : 
+315   async_destroy : 
+316   async_destroy : 
+317   async_destroy : 
+318   async_destroy : 
+319   async_destroy : 
+320   async_destroy : 
+321   async_destroy : 
+322   async_destroy : 
+323   async_destroy : 
+324   async_destroy : 
+325   async_destroy : 
+326   async_destroy : 
+327   async_destroy : 
+328   async_destroy : 
+329   async_destroy : 
+330   async_destroy : 
+331   async_destroy : 
+332   async_destroy : 
+333   async_destroy : 
+334   async_destroy : 
+335   async_destroy : 
+336   async_destroy : 
+337   async_destroy : 
+338   async_destroy : 
+339   async_destroy : 
+340   async_destroy : 
+341   async_destroy : 
+342   async_destroy : 
+343   async_destroy : 
+344   async_destroy : 
+345   async_destroy : 
+346   async_destroy : 
+347   async_destroy : 
+348   async_destroy : 
+349   async_destroy : 
+350   async_destroy : 
+351   async_destroy : 
+352   async_destroy : 
+353   async_destroy : 
+354   async_destroy : 
+355   async_destroy : 
+356   async_destroy : 
+357   async_destroy : 
+358   async_destroy : 
+359   async_destroy : 
+360   async_destroy : 
+361   async_destroy : 
+362   async_destroy : 
+363   async_destroy : 
+364   async_destroy : 
+365   async_destroy : 
+366   async_destroy : 
+367   async_destroy : 
+368   async_destroy : 
+369   async_destroy : 
+370   async_destroy : 
+371   async_destroy : 
+372   async_destroy : 
+373   async_destroy : 
+374   async_destroy : 
+375   async_destroy : 
+376   async_destroy : 
+377   async_destroy : 
+378   async_destroy : 
+379   async_destroy : 
+380   async_destroy : 
+381   async_destroy : 
+382   async_destroy : 
+383   async_destroy : 
+384   async_destroy : 
+385   async_destroy : 
+386   async_destroy : 
+387   async_destroy : 
+388   async_destroy : 
+389   async_destroy : 
+390   async_destroy : 
+391   async_destroy : 
+392   async_destroy : 
+393   async_destroy : 
+394   async_destroy : 
+395   async_destroy : 
+396   async_destroy : 
+397   async_destroy : 
+398   async_destroy : 
+399   async_destroy : 
+400   async_destroy : 
+401   async_destroy : 
+402   async_destroy : 
+403   async_destroy : 
+404   async_destroy : 
+405   async_destroy : 
+406   async_destroy : 
+407   async_destroy : 
+408   async_destroy : 
+409   async_destroy : 
+410   async_destroy : 
+411   async_destroy : 
+412   async_destroy : 
+413   async_destroy : 
+414   async_destroy : 
+415   async_destroy : 
+416   async_destroy : 
+417   async_destroy : 
+418   async_destroy : 
+419   async_destroy : 
+420   async_destroy : 
+421   async_destroy : 
+422   async_destroy : 
+423   async_destroy : 
+424   async_destroy : 
+425   async_destroy : 
+426   async_destroy : 
+427   async_destroy : 
+428   async_destroy : 
+429   async_destroy : 
+430   async_destroy : 
+431   async_destroy : 
+432   async_destroy : 
+433   async_destroy : 
+434   async_destroy : 
+435   async_destroy : 
+436   async_destroy : 
+437   async_destroy : 
+438   async_destroy : 
+439   async_destroy : 
+440   async_destroy : 
+441   async_destroy : 
+442   async_destroy : 
+443   async_destroy : 
+444   async_destroy : 
+445   async_destroy : 
+446   async_destroy : 
+447   async_destroy : 
+448   async_destroy : 
+449   async_destroy : 
+450   async_destroy : 
+451   async_destroy : 
+452   async_destroy : 
+453   async_destroy : 
+454   async_destroy : 
+455   async_destroy : 
+456   async_destroy : 
+457   async_destroy : 
+458   async_destroy : 
+459   async_destroy : 
+460   async_destroy : 
+461   async_destroy : 
+462   async_destroy : 
+463   async_destroy : 
+464   async_destroy : 
+465   async_destroy : 
+466   async_destroy : 
+467   async_destroy : 
+468   async_destroy : 
+469   async_destroy : 
+470   async_destroy : 
+471   async_destroy : 
+472   async_destroy : 
+473   async_destroy : 
+474   async_destroy : 
+475   async_destroy : 
+476   async_destroy : 
+477   async_destroy : 
+478   async_destroy : 
+479   async_destroy : 
+480   async_destroy : 
+481   async_destroy : 
+482   async_destroy : 
+483   async_destroy : 
+484   async_destroy : 
+485   async_destroy : 
+486   async_destroy : 
+487   async_destroy : 
+488   async_destroy : 
+489   async_destroy : 
+490   async_destroy : 
+491   async_destroy : 
+492   async_destroy : 
+493   async_destroy : 
+494   async_destroy : 
+495   async_destroy : 
+496   async_destroy : 
+497   async_destroy : 
+498   async_destroy : 
+499   async_destroy : 
+500   async_destroy : 
+501   async_destroy : 
+502   async_destroy : 
+503   async_destroy : 
+504   async_destroy : 
+505   async_destroy : 
+506   async_destroy : 
+507   async_destroy : 
+508   async_destroy : 
+509   async_destroy : 
+510   async_destroy : 
+511   async_destroy : 
+512   async_destroy : 
+513   async_destroy : 
+514   async_destroy : 
+515   async_destroy : 
+516   async_destroy : 
+517   async_destroy : 
+518   async_destroy : 
+519   async_destroy : 
+520   async_destroy : 
+521   async_destroy : 
+522   async_destroy : 
+523   async_destroy : 
+524   async_destroy : 
+525   async_destroy : 
+526   async_destroy : 
+527   async_destroy : 
+528   async_destroy : 
+529   async_destroy : 
+530   async_destroy : 
+531   async_destroy : 
+532   async_destroy : 
+533   async_destroy : 
+534   async_destroy : 
+535   async_destroy : 
+536   async_destroy : 
+537   async_destroy : 
+538   async_destroy : 
+539   async_destroy : 
+540   async_destroy : 
+541   async_destroy : 
+542   async_destroy : 
+543   async_destroy : 
+544   async_destroy : 
+545   async_destroy : 
+546   async_destroy : 
+547   async_destroy : 
+548   async_destroy : 
+549   async_destroy : 
+550   async_destroy : 
+551   async_destroy : 
+552   async_destroy : 
+553   async_destroy : 
+554   async_destroy : 
+555   async_destroy : 
+556   async_destroy : 
+557   async_destroy : 
+558   async_destroy : 
+559   async_destroy : 
+560   async_destroy : 
+561   async_before : 
+562   async_promise_resolve : 
+563   async_after : 
+564   async_before : 

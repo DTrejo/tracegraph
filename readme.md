@@ -17,5 +17,8 @@ Think VCR recordings but for program execution. VCR recordings allow us to recor
 ## Demo
 
 - [Example Ruby file](examples/hello_world.rb)
-- [Raw trace output (JSONL)](examples/hello_world.rb.trace)
-- [Pretty-printed trace](examples/hello_world.rb.viewer.md)
+- [Raw Ruby trace output (JSONL)](examples/hello_world.rb.trace)
+- [Pretty-printed Ruby trace](examples/hello_world.rb.viewer.md)
+- [Example Node file](examples/hello_world.js)
+- [Raw Node trace output (JSONL)](examples/hello_world.js.trace)
+- [Pretty-printed Node trace](examples/hello_world.js.viewer.md)
