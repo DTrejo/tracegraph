@@ -1,16 +1,17 @@
 #!/usr/bin/env ruby
 # bin/trace-view - Pretty print trace files
-# Usage: bin/trace-view <trace_file> [--summary]
+# Usage: bin/trace-view <trace_file> [--summary] [--async]
 
 require 'json'
 
 if ARGV.empty?
-  puts "Usage: bin/trace-view <trace_file> [--summary]"
+  puts "Usage: bin/trace-view <trace_file> [--summary] [--async]"
   exit 1
 end
 
 trace_file = ARGV[0]
 show_summary = ARGV.include?('--summary')
+show_async = ARGV.include?('--async')
 
 unless File.exist?(trace_file)
   puts "Error: File not found: #{trace_file}"
@@ -32,6 +33,7 @@ else
 end
 
 call_depth = 0
+display_id = 0
 
 File.foreach(trace_file) do |line|
   e = JSON.parse(line)
@@ -44,6 +46,12 @@ File.foreach(trace_file) do |line|
     puts "Methods called: #{e["methods_called"].join(", ")}"
     next
   end
+
+  if e["event"].start_with?("async_") && !show_async
+    next
+  end
+
+  display_id += 1
 
   # Track call depth for indentation
   call_depth -= 1 if e["event"] == "return" || e["event"] == "c_return"
@@ -59,10 +67,19 @@ File.foreach(trace_file) do |line|
   end
 
   # Build output line
-  id = e["id"].to_s.rjust(3)
+  id = (show_async ? e["id"] : display_id).to_s.rjust(3)
   event = "#{event_color}#{e["event"].ljust(8)}#{RESET}"
-  location = "#{DIM}#{e["file"]}:#{e["line"]}#{RESET}"
+  location_file = e["file"] || "-"
+  location_line = e["line"] || "-"
+  location = "#{DIM}#{location_file}:#{location_line}#{RESET}"
   method = e["method"] != "<main>" ? "#{CYAN}#{e["method"]}#{RESET}" : ""
+
+  if e["event"].start_with?("async_")
+    async_label = "#{e["async_type"] || "unknown"}##{e["async_id"] || "?"}"
+    trigger_label = e["trigger_async_id"] ? " <= #{e["trigger_async_id"]}" : ""
+    puts "#{id} #{indent}#{event} #{DIM}#{async_label}#{trigger_label}#{RESET}"
+    next
+  end
 
   puts "#{id} #{indent}#{event} #{location} #{method}"
 

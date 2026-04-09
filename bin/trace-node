@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+
+const fs = require('node:fs')
+const path = require('node:path')
+const { traceNodeFile } = require('../lib/node_tracer')
+
+async function main() {
+  if (process.argv.length < 3) {
+    console.error('Usage: bin/trace-node <entry_file> [output_file] [--wait-ms=100]')
+    process.exit(1)
+  }
+
+  const entryFile = path.resolve(process.argv[2])
+  const outputFile = process.argv[3] && !process.argv[3].startsWith('--')
+    ? path.resolve(process.argv[3])
+    : `${entryFile}.trace`
+
+  const waitArg = process.argv.find((arg) => arg.startsWith('--wait-ms='))
+  const waitMs = waitArg ? Number(waitArg.split('=')[1]) : 100
+
+  if (!Number.isFinite(waitMs) || waitMs < 0) {
+    console.error('Error: --wait-ms must be a non-negative number')
+    process.exit(1)
+  }
+
+  if (!fs.existsSync(entryFile)) {
+    console.error(`Error: File not found: ${entryFile}`)
+    process.exit(1)
+  }
+
+  console.log(`Tracing ${entryFile} -> ${outputFile}`)
+  await traceNodeFile(entryFile, outputFile, { wait_ms: waitMs, app_paths: [path.dirname(entryFile)] })
+  console.log(`Trace complete: ${outputFile}`)
+}
+
+main().catch((error) => {
+  console.error(`Trace failed: ${error.message}`)
+  process.exit(1)
+})
